@@ -7,6 +7,7 @@ static const wchar_t CLASS_NAME[] = L"SeepongWindowClass";
 
 static PLAYER leftPlayer  = { .x = 100, .y = 150, .width = 20, .height = 100 };
 static PLAYER rightPlayer = { .x = 300, .y = 350, .width = 20, .height = 100 };
+static double timer = 0;
 
 static LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
@@ -18,8 +19,8 @@ static LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lP
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hwnd, &ps);
 
-            const RECT left  = getRect(leftPlayer);
-            const RECT right = getRect(rightPlayer);
+            const RECT left  = getRect(&leftPlayer);
+            const RECT right = getRect(&rightPlayer);
             FillRect(hdc, &left,  GetStockObject(BLACK_BRUSH));
             FillRect(hdc, &right, GetStockObject(BLACK_BRUSH));
 

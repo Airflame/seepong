@@ -10,6 +10,6 @@ typedef struct PLAYER {
     int height;
 } PLAYER;
 
-RECT getRect(PLAYER player);
+RECT getRect(const PLAYER *player);
 
 #endif //SEEPONG_SEEPONG_H
