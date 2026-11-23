@@ -3,10 +3,10 @@
 RECT getRect(const PLAYER *player)
 {
     RECT rect = {
-        .left   = player->x,
-        .top    = player->y,
-        .right  = player->x + player->width,
-        .bottom = player->y + player->height
+        .left   = player->x - player->width / 2,
+        .top    = player->y - player->height / 2,
+        .right  = player->x + player->width / 2,
+        .bottom = player->y + player->height / 2
     };
     return rect;
 }

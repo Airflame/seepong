@@ -2,11 +2,13 @@
 
 #define WINDOW_WIDTH  800
 #define WINDOW_HEIGHT 600
+#define PLAYER_WIDTH  20
+#define PLAYER_HEIGHT 150
 
 static const wchar_t CLASS_NAME[] = L"SeepongWindowClass";
 
-static PLAYER leftPlayer  = { .x = 100, .y = 150, .width = 20, .height = 100 };
-static PLAYER rightPlayer = { .x = 300, .y = 350, .width = 20, .height = 100 };
+static PLAYER leftPlayer  = { .x = PLAYER_WIDTH / 2, .y = WINDOW_HEIGHT / 2, .width = PLAYER_WIDTH, .height = PLAYER_HEIGHT };
+static PLAYER rightPlayer = { .x = WINDOW_WIDTH - PLAYER_WIDTH / 2, .y = WINDOW_HEIGHT / 2, .width = PLAYER_WIDTH, .height = PLAYER_HEIGHT };
 static double timer = 0;
 
 static LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
